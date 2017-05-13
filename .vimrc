@@ -140,7 +140,8 @@ set noswapfile
 " mkdir -p ~/.vim/autoload ~/.vim/bundle
 " curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 " Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
+" call pathogen#infect()
+execute pathogen#infect()
 
 
 " ============================================================================
@@ -167,7 +168,7 @@ set wildignore+=*/coverage/*
 " Note: I'm no longer using this. Leave this commented out
 " and uncomment the part about jedi-vim instead
 " cd ~/.vim/bundle
-" git clone https://github.com/klen/python-mode
+" git clone --recursive https://github.com/klen/python-mode
 "" map <Leader>g :call RopeGotoDefinition()<CR>
 "" let ropevim_enable_shortcuts = 1
 "" let g:pymode_rope_goto_def_newwin = "vnew"
@@ -180,10 +181,10 @@ set wildignore+=*/coverage/*
 
 " Settings for jedi-vim
 " cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
+" git clone --recursive git://github.com/davidhalter/jedi-vim.git
 let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
@@ -209,5 +210,16 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
 
+" Python Syntstic
+" cd ~/.vim/bundle
+" git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+" set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
