@@ -1,0 +1,11 @@
+#query in installed pkgs
+dpkg-query -l | grep pkgname
+
+
+#installing vim
+sudo apt-get install vim
+#python interpreter support
+sudo apt-get install vim-nox-py2
+
+#uninstall a pkg
+sudo apt-get purge --auto-remove packagename
