@@ -222,4 +222,21 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-
+" Java Autocomplete
+" cd ~/.vim/bundle
+" git clone https://github.com/artur-shaik/vim-javacomplete2.git
+" Plugin 'artur-shaik/vim-javacomplete2'
+" NeoBundle 'artur-shaik/vim-javacomplete2'
+" Plug 'artur-shaik/vim-javacomplete2'
+let g:EclimCompletionMethod = 'omnifunc'
+" Add this to your .vimrc file:
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" To enable smart (trying to guess import option) inserting class imports with F4, add:
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+" To enable usual (will ask for import option) inserting class imports with F5, add:
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+" To add all missing imports with F6:
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
