@@ -4,11 +4,11 @@ wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=1
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 cd ~/.vim/bundle
-git clone git://github.com/Lokaltog/vim-powerline.git
+git clone https://github.com/Lokaltog/vim-powerline.git
 cd ~/.vim/bundle
 git clone https://github.com/kien/ctrlp.vim.git
 cd ~/.vim/bundle
-git clone --recursive git://github.com/davidhalter/jedi-vim.git
+git clone --recursive https://github.com/davidhalter/jedi-vim.git
 mkdir -p ~/.vim/ftplugin
 wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 cd ~/.vim/bundle
